@@ -5,9 +5,10 @@ services:
         build:
             context: .
         volumes:
-            - "./projects:/home/coder/project"
-            - "~/.local/share/vscode:/home/coder/.local/share/code-server"
+            - "~/vscode-server/local:/home/coder/.local"
+            - "~/vscode-server/projects:/home/coder/project"
+            - "~/vscode-server/cache:/home/coder/.cache"
         ports:
-            - "8080:8080"
+            - "8443:8443"
         restart: always
-        command: --no-auth --allow-http
+        command: --no-auth
