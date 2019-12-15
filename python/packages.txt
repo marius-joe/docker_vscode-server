@@ -1,4 +1,4 @@
 # development
-black
-pylint
+#black
+#pylint
 requests
