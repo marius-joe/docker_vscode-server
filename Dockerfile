@@ -12,5 +12,5 @@ RUN sudo -E apt-get update && sudo -E apt-get install -y \
 
 # python requirements
 COPY requirements.txt /home/coder/
-RUN python3.7 -m pip install --no-cache-dir -r ~/requirements.txt
+#RUN python3.7 -m pip install --no-cache-dir -r ~/requirements.txt
 ENTRYPOINT ["code-server"]
