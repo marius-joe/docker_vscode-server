@@ -1,5 +1,4 @@
-numpy
 # development
 black
-jupyter
 pylint
+requests
