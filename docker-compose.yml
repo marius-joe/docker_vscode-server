@@ -8,9 +8,6 @@ services:
             - "./projects:/home/coder/project"
             - "~/.local/share/vscode:/home/coder/.local/share/code-server"
         ports:
-            # With SSL
-            - "443:8443"
-            # With HTTP
-            #- "80:8443"
+            - "8080:8080"
         restart: always
-        command: --no-auth # if using proxy add: --allow-http
+        command: --no-auth --allow-http
