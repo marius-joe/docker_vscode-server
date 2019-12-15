@@ -9,6 +9,6 @@ services:
             - "~/vscode-server/projects:/home/coder/project"
             - "~/vscode-server/.cache:/home/coder/.cache"
         ports:
-            - "8443:8443"
+            - "8080:8080"
         restart: always
         command: --no-auth
