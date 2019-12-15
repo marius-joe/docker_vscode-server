@@ -5,9 +5,9 @@ services:
         build:
             context: .
         volumes:
-            - "~/vscode-server/local:/home/coder/.local"
+            - "~/vscode-server/.local:/home/coder/.local"
             - "~/vscode-server/projects:/home/coder/project"
-            - "~/vscode-server/cache:/home/coder/.cache"
+            - "~/vscode-server/.cache:/home/coder/.cache"
         ports:
             - "8443:8443"
         restart: always
