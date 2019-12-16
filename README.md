@@ -19,14 +19,14 @@ Use the Shells "Boost Mode" if you need a little more performance.
 3. Start docker container in the background\
    cd ~/docker_vscode-server && docker-compose up -d
 
-4. Open the Cloud Shell's preview window in the right hand corner with port 8080
-
-
-#### => Happy Coding on any device you like :)
-
-
+4. Open the Cloud Shell's preview window in the right hand corner with port 8080  
+  
+  
+#### => Happy Coding on any device you like :)  
+  
+  
 Your vscode-server can be stopped with:\
-cd ~/docker_vscode-server && docker-compose stop
+cd ~/docker_vscode-server && docker-compose stop  
   
   
 ## Vs Code Server start time:
@@ -58,11 +58,11 @@ If you are first confused about the container_name vs image name in the docker-c
   
 4. Push the build docker image to Google Cloud Registry\
    docker push eu.gcr.io/YOUR_PROJECT_ID/vscode-server  
-  
-  
+     
+     
 After this every time you start the vscode-server with\
 cd ~/docker_vscode-server && docker-compose up -d\
-the GC Container Registry is searched for the image, before a new build would be triggered.
+the GC Container Registry is searched for the image, before a new build would be triggered.  
   
   
 ### Extra:
@@ -72,9 +72,9 @@ https://cloud.google.com/container-registry/docs/pushing-and-pulling?hl=de\
 gcr.io (USA at the moment, but can change)\
  us.gcr.io\
  eu.gcr.io\
- asia.gcr.io
-  
-  
+ asia.gcr.io  
+   
+   
 ## About Google CLoud Shell:
 
 https://cloud.google.com/shell/docs/how-cloud-shell-works
