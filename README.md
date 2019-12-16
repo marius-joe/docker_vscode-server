@@ -69,7 +69,7 @@ the GC Container Registry is searched for the image, before a new build would be
 ### Extra:
 
 For best performance the image host can be also adjusted to your region\
-https://cloud.google.com/container-registry/docs/pushing-and-pulling?hl=de\
+https://cloud.google.com/container-registry/docs/pushing-and-pulling?hl=de  
 gcr.io (USA at the moment, but can change)\
  us.gcr.io\
  eu.gcr.io\
