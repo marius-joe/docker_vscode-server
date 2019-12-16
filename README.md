@@ -54,12 +54,12 @@ The image tag has to be build in this format: [HOSTNAME]/[PROJECT-ID]/[IMAGE] ->
 If you are first confused about the container_name vs image name in the docker-compose.yml:\
 "container_name" names the container that is finally spun up from the image.\
 "image" names and tags the image created, from which the container is built -> this name/tag needs to be referenced when pushing/pulling docker images\
-\
+  
 
 4. Push the build docker image to Google Cloud Registry\
-   docker push eu.gcr.io/YOUR_PROJECT_ID/vscode-server
+   docker push eu.gcr.io/YOUR_PROJECT_ID/vscode-server  
+  
 
-\
 After this every time you start the vscode-server with\
 cd ~/docker_vscode-server && docker-compose up -d\
 the GC Container Registry is searched for the image, before a new build would be triggered.
