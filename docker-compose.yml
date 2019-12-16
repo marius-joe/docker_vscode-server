@@ -1,7 +1,7 @@
 version: "3"
 services:
-    vscode:
-        container_name: vscode
+    vscode-server:
+        container_name: vscode-server
         build:
             context: .
         volumes:
