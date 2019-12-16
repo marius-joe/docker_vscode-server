@@ -14,6 +14,8 @@ Use the Shells "Boost Mode" if you need a little more performance.
 
 ## HowTo:
 
+Start a new Google Cloud Shell: https://cloud.google.com/shell/
+
 1. git clone https://github.com/marius-joe/docker_vscode-server.git "optional local path where to store"\
    if you choose a path other than the Cloud Shells home directory, adjust the working directory in the following steps
 
