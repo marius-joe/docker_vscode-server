@@ -12,11 +12,11 @@ Use the Shells "Boost Mode" if you need a little more performance.
 1. git clone https://github.com/marius-joe/docker_vscode-server.git "optional local path where to store"\
    if you choose a path other than the Cloud Shells home directory, adjust the working directory in the following steps
 
-2. Create persistent folders for VS Code settings and extensions
+2. Create persistent folders for VS Code settings and extensions\
    mkdir -p ~/vscode-server/{projects,.local,.cache}
    -> this folders are mounted in the docker-compose.yml
 
-3. Start docker container in the background
+3. Start docker container in the background\
    cd ~/docker_vscode-server && docker-compose up -d
 
 4. Open the Cloud Shell's preview window in the right hand corner with port 8080
@@ -44,7 +44,7 @@ Traffic between Google Cloud Services seems to be free, so using the preview mod
 
 2. Start the Cloud Shell in this project
 
-3. Adjust the tag of your docker image to connect the image correctly to the Google Cloud Container Registry
+3. Adjust the tag of your docker image to connect the image correctly to the Google Cloud Container Registry\
    -> your project ID has to be put in the docker-compose file - the project ID can be found in the console (appended to your current user)
 
 cd ~/docker_vscode-server && sed --in-place 's|eu.gcr.io/general/vscode-server|eu.gcr.io/YOUR_PROJECT_ID/vscode-server|g' docker-compose.yml
@@ -56,7 +56,7 @@ If you are first confused about the container_name vs image name in the docker-c
 "image" names and tags the image created, from which the container is built -> this name/tag needs to be referenced when pushing/pulling docker images\
 
 
-4. Push the build docker image to Google Cloud Registry
+4. Push the build docker image to Google Cloud Registry\
    docker push eu.gcr.io/YOUR_PROJECT_ID/vscode-server
 
 After this every time you start the vscode-server with\
