@@ -89,3 +89,7 @@ This means Cloud Shell always comes with the latest versions of Cloud SDK, Docke
 If you do not access Cloud Shell regularly, the 5GB \$HOME directory persistent storage may be recycled.\
 You will receive an email notification before this occurs.\
 Starting a Cloud Shell session will prevent its removal.
+
+## Used projects:
+Thanks to the cool guys from https://github.com/cdr/code-server to make running VS Code in a browser possible\
+Thanks to Google for providing the awesome Google Cloud Platform with its highly useful services https://cloud.google.com/shell/ and https://cloud.google.com/container-registry
