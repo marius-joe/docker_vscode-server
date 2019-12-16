@@ -56,7 +56,8 @@ If you are first confused about the container_name vs image name in the docker-c
 "image" names and tags the image created, from which the container is built -> this name/tag needs to be referenced when pushing/pulling docker images  
   
   
-4. Push the build docker image to Google Cloud Registry\
+4. 
+   Push the build docker image to Google Cloud Registry\
    docker push eu.gcr.io/YOUR_PROJECT_ID/vscode-server  
      
      
