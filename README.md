@@ -1,8 +1,13 @@
 # docker_vscode-server
+
 ## Run VS Code on a remote server, accessible through the browser
 
+**[already useful, but still under development]**
+
 In this blueprint a docker container with a VS Code server is run in the Google Cloud Shell.\
-VS Code itself is accessible through this Shells Preview Mode.\
+Visual Studio Code itself is accessible through this Shells Preview Mode.\
+This browser version can be used in the same way as your local installation and allows running your personal development environment
+also on mobile devices like an iPad. Basically just a network and a browser is needed.\
 You can use Git to access your files and also store your edits in the persistent 5 GB home directory of the Google Cloud Shell.
 
 Use the Shells "Boost Mode" if you need a little more performance.
@@ -19,23 +24,26 @@ Use the Shells "Boost Mode" if you need a little more performance.
 3. Start docker container in the background\
    cd ~/docker_vscode-server && docker-compose up -d
 
-4. Open the Cloud Shell's preview window in the right hand corner with port 8080  
-  
-  
-#### => Happy Coding on any device you like :)  
-  
-  
+4. Open the Cloud Shell's preview window in the right hand corner with port 8080
+
+#### => Happy Coding on any device you like :)
+
 Your vscode-server can be stopped with:\
-cd ~/docker_vscode-server && docker-compose stop  
-  
-  
+cd ~/docker_vscode-server && docker-compose stop
+
+### Configuration:
+
+The current Dockerfile just installs Python 3.7 + the requests package in the container and installs the python extension for VS Code.\
+Other software can be specified in the apt-get and VS Code extensions statements in the Dockerfile.\
+Addional Python packages for the installation can be named in /python/packages.txt
+
 ## Vs Code Server start time:
 
 Google Cloud Shell offers 5 GB of free persistent storage for your HOME directory, but the build docker images are by default not persistent.\
 To not have to wait until the docker VS Code container has been build each time when you want to use it,
 transfer the once build image to the Google Cloud Container Registry.\
 Prices are really low like: 0,026 \$ per GB and month\
-https://cloud.google.com/storage/pricing?hl=de#storage-pricing  
+https://cloud.google.com/storage/pricing?hl=de#storage-pricing
 Traffic between Google Cloud Services seems to be free, so using the preview mode should not produce addional costs at all.
 
 ## Steps:
@@ -53,29 +61,25 @@ The image tag has to be build in this format: [HOSTNAME]/[PROJECT-ID]/[IMAGE] ->
 
 If you are first confused about the container_name vs image name in the docker-compose.yml:\
 "container_name" names the container that is finally spun up from the image.\
-"image" names and tags the image created, from which the container is built -> this name/tag needs to be referenced when pushing/pulling docker images  
-  
-  
-4. 
-   Push the build docker image to Google Cloud Registry\
-   docker push eu.gcr.io/YOUR_PROJECT_ID/vscode-server  
-     
-     
+"image" names and tags the image created, from which the container is built -> this name/tag needs to be referenced when pushing/pulling docker images
+
+4.
+Push the build docker image to Google Cloud Registry\
+ docker push eu.gcr.io/YOUR_PROJECT_ID/vscode-server
+
 After this every time you start the vscode-server with\
 cd ~/docker_vscode-server && docker-compose up -d\
-the GC Container Registry is searched for the image, before a new build would be triggered.  
-  
-  
+the GC Container Registry is searched for the image, before a new build would be triggered.
+
 ### Extra:
 
 For best performance the image host can be also adjusted to your region\
-https://cloud.google.com/container-registry/docs/pushing-and-pulling?hl=de  
+https://cloud.google.com/container-registry/docs/pushing-and-pulling?hl=de
 gcr.io (USA at the moment, but can change)\
  us.gcr.io\
  eu.gcr.io\
- asia.gcr.io  
-   
-   
+ asia.gcr.io
+
 ## About Google CLoud Shell:
 
 https://cloud.google.com/shell/docs/how-cloud-shell-works
@@ -91,5 +95,6 @@ You will receive an email notification before this occurs.\
 Starting a Cloud Shell session will prevent its removal.
 
 ## Used projects:
+
 Thanks to the cool guys from https://github.com/cdr/code-server to make running VS Code in a browser possible\
 Thanks to Google for providing the awesome Google Cloud Platform with its highly useful services https://cloud.google.com/shell/ and https://cloud.google.com/container-registry
