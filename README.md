@@ -39,7 +39,7 @@ The current Dockerfile just installs Python 3.7 + the requests package in the co
 Other software can be specified in the apt-get and VS Code extensions statements in the Dockerfile.\
 Addional Python packages for the installation can be named in /python/packages.txt
 
-## Vs Code Server start time:
+## VS Code Server start time:
 
 Google Cloud Shell offers 5 GB of free persistent storage for your HOME directory, but the build docker images are by default not persistent.\
 To not have to wait until the docker VS Code container has been build each time when you want to use it,
@@ -57,17 +57,16 @@ Traffic between Google Cloud Services seems to be free, so using the preview mod
 3. Adjust the tag of your docker image to connect the image correctly to the Google Cloud Container Registry\
    -> your project ID has to be put in the docker-compose file - the project ID can be found in the console (appended to your current user)
 
-cd ~/docker_vscode-server && sed --in-place 's|eu.gcr.io/general/vscode-server|eu.gcr.io/YOUR_PROJECT_ID/vscode-server|g' docker-compose.yml
+    cd ~/docker_vscode-server && sed --in-place 's|eu.gcr.io/general/vscode-server|eu.gcr.io/YOUR_PROJECT_ID/vscode-server|g' docker-compose.yml
 
-The image tag has to be build in this format: [HOSTNAME]/[PROJECT-ID]/[IMAGE] -> e.g. "eu.gcr.io/general-123/vscode-server"
+    The image tag has to be build in this format: [HOSTNAME]/[PROJECT-ID]/[IMAGE] -> e.g. "eu.gcr.io/general-123/vscode-server"
 
-If you are first confused about the container_name vs image name in the docker-compose.yml:\
-"container_name" names the container that is finally spun up from the image.\
-"image" names and tags the image created, from which the container is built -> this name/tag needs to be referenced when pushing/pulling docker images
+    If you are first confused about the container_name vs image name in the docker-compose.yml:\
+     "container_name" names the container that is finally spun up from the image.\
+     "image" names and tags the image created, from which the container is built -> this name/tag needs to be referenced when pushing/pulling docker images
 
-4.
-Push the build docker image to Google Cloud Registry\
- docker push eu.gcr.io/YOUR_PROJECT_ID/vscode-server
+4. Push the build docker image to Google Cloud Registry\
+   docker push eu.gcr.io/YOUR_PROJECT_ID/vscode-server
 
 After this every time you start the vscode-server with\
 cd ~/docker_vscode-server && docker-compose up -d\
