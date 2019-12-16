@@ -2,6 +2,7 @@ version: "3"
 services:
     vscode-server:
         container_name: vscode-server
+        image: eu.gcr.io/general/vscode-server
         build:
             context: .
         volumes:
