@@ -1,3 +1,10 @@
+# ******************************************
+#  Dev:  marius-joe
+# ******************************************
+#  https://github.com/marius-joe/docker_vscode-server
+#  v1.0.0
+# ******************************************
+
 version: "3"
 services:
     vscode-server:

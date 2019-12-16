@@ -1,3 +1,10 @@
+# ******************************************
+#  Dev:  marius-joe
+# ******************************************
+#  https://github.com/marius-joe/docker_vscode-server
+#  v1.0.0
+# ******************************************
+
 FROM codercom/code-server:latest
 
 # ubuntu package installations (e.g. Python)
